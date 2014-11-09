@@ -19,6 +19,19 @@ get '/posts/:id' do
 	erb :'/posts/show'
 end
 
+put '/posts/:id' do
+	updated_post = MicroPost.update(params[:id], params[:micro_post])
+	tags = Tag.find(params[:tags])
+	updated_post.tags = []
+	tags.each { |tag| updated_post.tags << tag }
+
+	if updated_post.save
+		redirect("/posts/#{updated_post.id}")
+	else
+		redirect "/posts/#{updated_post.id}"
+	end
+end
+
 post '/posts' do
 	micro_post = MicroPost.new(params[:micro_post])
 	tags = Tag.find(params[:tags])
@@ -30,4 +43,11 @@ post '/posts' do
 	else
 		redirect("/posts/new")
 	end
+end
+
+get '/posts/:id/edit' do
+	@micro_post = MicroPost.find(params[:id])
+	@tags = Tag.all
+	@authors = Author.all
+	erb :'/posts/edit'
 end

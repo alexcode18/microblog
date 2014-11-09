@@ -1,0 +1,38 @@
+<div class="large_post_box">
+	<h3>Edit Post</h3>
+	<form action="/posts/<%= @micro_post.id %>" method="post">
+		<input type="hidden" name="_method" value="put">
+		
+		<br><label for="author">Author:<br>
+			<select name="micro_post[author_id]">
+				<% @authors.each do |author|%>
+					<option <%= "selected" if author.name == @micro_post.author[:name] %> value="<%= author.id %>">
+						<%= author.name %>
+					</option>
+				<%end%>
+			</select>
+		</label><br>
+
+		<br><label for="title">Title:<br/>
+			<input type="text" name="micro_post[title]" value="<%=@micro_post.title%>">
+		</label><br>
+
+		<br><label for="words">Words:<br/>
+			<input type="text" name="micro_post[words]" value="<%=@micro_post.words%>">
+		</label><br>
+
+		<br><label for="image">Image:<br/>
+			<input type="text" name="micro_post[img_url]" value="<%= @micro_post.img_url%>">
+		</label><br>
+
+		<br><label for="tags">Tags:<br/>
+			<% @tags.each do |tag|%>
+				<input  type="checkbox" name="tags[]" value="<%= tag.id %>" <%= "checked" if tag.name == @micro_post.tags.name %>>
+					<%= tag.name %>
+				<br/>
+			<%end%>
+		</label><br>
+
+		<button>SUBMIT</button>
+	</form>
+</div>
