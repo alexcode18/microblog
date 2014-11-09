@@ -10,19 +10,19 @@ require_relative 'models/micro_post.rb'
 require_relative 'models/tag.rb'
 
 #controllers
-require_relative 'controllers/authors_controller'
+# require_relative 'controllers/authors_controller'
 require_relative 'controllers/home_controller'
 require_relative 'controllers/micro_posts_controller'
-require_relative 'controllers/tags_controller'
+# require_relative 'controllers/tags_controller'
 
 configure :development  do
 	use BetterErrors::Middleware
-	BetterErrors.applications_root = File.expand_path('..', __FILE__)
+	BetterErrors.application_root = File.expand_path('..', __FILE__)
 end
 
 ActiveRecord::Base.establish_connection({
 	adapter: 'postgresql',
-	database: 'museum_app_db',
+	database: 'microblog_db',
 	host: 'localhost'
 })
 

@@ -1,0 +1,11 @@
+<div class="large_post_box">
+	<img class="big_image" src="<%= @micro_post.img_url%>">
+	<p><%= @micro_post.words%></p>
+	<p class="post_stat"><%= @micro_post.author.name %> - <%= @micro_post.created_on%> | Edit</p>
+</div>
+
+<div class="post_box">
+	<img class="thumbnail" src="<%= @micro_post.author.img_url%>">
+	<p><%= @micro_post.author.name%></p>
+	<p class="post_stat"><%= @micro_post.author.bio %> - <%= @micro_post.author.location%> | Edit</p>
+</div>

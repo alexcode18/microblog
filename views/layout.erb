@@ -1,20 +1,39 @@
-<DOCTYPE! html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<title>Microblog</title>
+	<link rel="stylesheet" href="/normalize.css">
+	<link rel="stylesheet" href="/reset.css">
+	<link rel="stylesheet" href="/style.css">
 </head>
 <body>
-	<header>
-		
+	<header>	
 		<nav>
-			<a><h1>MicroBlog</h1></a>
-			<a>posts</a>
-			<a>tags</a>
-			<a>authors</a>
+			<h1>Pic Em'</h1>
+			<ul>
+				<li href="/posts">posts</li>
+				<li href="/tags">tags</li>
+				<li href="/authors">authors</li>
+			</ul>
 		</nav>
 	</header>
 	<div id="container">
-		<%= %>
+		<%= yield%>
+		<!-- <div class="post_box">
+			<img class="thumbnail" src="http://lecitykitty.com/wp-content/uploads/2014/05/audrey-2.jpg">
+			<p>A great image</p>
+			<p class="post_stat">Author - 1/22/14 | Edit</p>
+		</div>
+		<div class="post_box">
+			<img class="thumbnail" src="http://lecitykitty.com/wp-content/uploads/2014/05/audrey-2.jpg">
+			<p>A great image</p>
+			<p class="post_stat">Author - 1/22/14 | Edit</p>
+		</div>
+		<div class="post_box">
+			<img class="thumbnail" src="http://lecitykitty.com/wp-content/uploads/2014/05/audrey-2.jpg">
+			<p>A great image</p>
+			<p class="post_stat">Author - 1/22/14 | Edit</p>
+		</div> -->
 	</div>
 </body>
 </html>
