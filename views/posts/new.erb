@@ -1,0 +1,37 @@
+<div class="large_post_box">
+	<h3>Create a new Post</h3>
+	<form action="/posts" method="post">
+		
+		<br><label for="author">Author:<br>
+			<select name="micro_post[author_id]">
+				<% @authors.each do |author|%>
+					<option value="<%= author.id %>">
+						<%= author.name %>
+					</option>
+				<%end%>
+			</select>
+		</label><br>
+
+		<br><label for="title">Title:<br/>
+			<input type="text" name="micro_post[title]">
+		</label><br>
+
+		<br><label for="words">Words:<br/>
+			<input type="text" name="micro_post[words]">
+		</label><br>
+
+		<br><label for="image">Image:<br/>
+			<input type="text" name="micro_post[img_url]">
+		</label><br>
+
+		<br><label for="tags">Tags:<br/>
+			<% @tags.map do |tag|%>
+				<input type="checkbox" name="tags[]" value="<%= tag.id %>">
+					<%= tag.name %>
+				<br/>
+			<%end%>
+		</label><br>
+
+		<button>SUBMIT</button>
+	</form>
+</div>

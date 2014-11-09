@@ -42,12 +42,23 @@ h1 {
 	margin: 0 auto;
 }
 
-.post_box {
-	width: 250px;
+.post_box,
+.large_post_box,
+.author_post_box {
+	
 	background: white;
 	box-shadow: 0px 2px 6px grey;
 	float: left;
 	margin: 8px;
+}
+
+
+.post_box {
+	width: 250px;
+}
+
+.large_post_box {
+	width: 600px;
 }
 
 .post_box p {
@@ -56,6 +67,10 @@ h1 {
 
 .thumbnail {
 	width: 250px;
+}
+
+.big_image {
+	max-width: 600px;
 }
 
 #container link{
@@ -67,3 +82,4 @@ h1 {
 	border-top: 1px solid lightgrey;
 	padding-top: 10px;
 }
+
