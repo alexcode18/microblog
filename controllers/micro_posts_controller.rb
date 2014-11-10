@@ -51,3 +51,12 @@ get '/posts/:id/edit' do
 	@authors = Author.all
 	erb :'/posts/edit'
 end
+
+delete '/posts/:id' do
+	micro_post = MicroPost.find(params[:id])
+	if micro_post.destroy
+		redirect '/posts'
+	else
+		redirect "/posts/#{micro_post.id}"
+	end
+end

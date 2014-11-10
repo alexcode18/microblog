@@ -27,7 +27,11 @@
 
 		<br><label for="tags">Tags:<br/>
 			<% @tags.each do |tag|%>
-				<input  type="checkbox" name="tags[]" value="<%= tag.id %>" <%= "checked" if tag.name == @micro_post.tags.name %>>
+				<input  type="checkbox" name="tags[]" value="<%= tag.id %>" <% @micro_post.tags.each do |tag2|%>
+					<%if tag.name == tag2.name%>
+						checked
+					<%end%>
+				<%end%>>
 					<%= tag.name %>
 				<br/>
 			<%end%>

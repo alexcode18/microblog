@@ -1,0 +1,19 @@
+<div class="post_box">
+	<h3>Create a new Tag</h3>
+	<form action="/tags" method="post">
+
+		<br><label for="name">Tag Name:<br/>
+			<input type="text" name="tag[name]">
+		</label><br>
+
+		<button>SUBMIT</button>
+	</form>
+</div>
+
+<% @tags.each do |tag| %>
+	
+	<div class="post_box">
+		<a href="/tags/<%= tag.id %>"><%= tag.name %></a>
+		<p class="post_stat"><a href="/tags/<%= tag.id %>/edit">Edit</a></p>
+	</div>
+<% end %>

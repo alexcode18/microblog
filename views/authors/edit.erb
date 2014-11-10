@@ -1,0 +1,29 @@
+<div class="large_post_box">
+	<h3>Edit your Account</h3>
+	<form action="/authors/<%=@author.id%>" method="post">
+		<input type="hidden" name="_method" value="put">
+
+		<br><label for="name">Name:<br/>
+			<input type="text" name="author[name]" value="<%= @author.name%>">
+		</label><br>
+
+		<br><label for="img_url">Portrait:<br/>
+			<input type="text" name="author[img_url]" value="<%= @author.img_url%>">
+		</label><br>
+
+		<br><label for="bio">Bio:<br/>
+			<input type="text" name="author[bio]" value="<%= @author.bio%>">
+		</label><br>
+
+		<br><label for="location">Location:<br/>
+			<input type="text" name="author[location]" value="<%= @author.location%>">
+		</label><br>
+
+		<button>SUBMIT</button>
+	</form>
+
+	<form action="/authors/<%= @author.id%>" method="post">
+		<input type="hidden" name="_method" value="DELETE">
+		<button>Remove</button>
+	</form>
+</div>

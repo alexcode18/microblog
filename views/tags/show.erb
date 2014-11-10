@@ -1,0 +1,9 @@
+<% @tag.micro_posts.each do |micro_post| %>
+	
+	<div class="post_box">
+		<a href="/posts/<%= micro_post.id %>"><img class="thumbnail" src="<%= micro_post.img_url%>"></a>
+		<p><%= micro_post.words%></p>
+		<p class="post_stat"><%= micro_post.author.name %> - <%= micro_post.created_on%> | <a href="/posts/<%= micro_post.id %>/edit">Edit</a></p>
+	</div>
+
+<% end %>
