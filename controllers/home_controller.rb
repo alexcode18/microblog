@@ -3,5 +3,6 @@
 #=================
 
 get '/' do 
-	erb :'home/home'
+	@micro_posts = MicroPost.all
+	erb :'posts/index'
 end

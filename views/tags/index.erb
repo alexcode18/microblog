@@ -13,7 +13,6 @@
 <% @tags.each do |tag| %>
 	
 	<div class="post_box">
-		<a href="/tags/<%= tag.id %>"><%= tag.name %></a>
-		<p class="post_stat"><a href="/tags/<%= tag.id %>/edit">Edit</a></p>
+		<p><a href="/tags/<%= tag.id %>"><%= tag.name %></a></p>
 	</div>
 <% end %>
